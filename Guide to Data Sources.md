@@ -84,13 +84,124 @@ Find those and their context under _Currently Unavailable (Location Known)_.
       - CESC
       - MESCOM
 
+- **Kerala (Nested Links) [https://sldckerala.com/index.php?id=1](https://sldckerala.com/index.php?id=1)**
+
+- **Madhya Pradesh (Nested Links) [http://www.sldcmpindia.com/](http://www.sldcmpindia.com/)**
+
+- **Maharashtra (Nested Links) [http://www.mahasldc.in/](http://www.mahasldc.in/)**
+
+- **Manipur (Nested Links) [https://sldcmanipur.com/](https://sldcmanipur.com/)**
+
+- **Mizoram (Nested Links) [http://sldc.mizoram.gov.in/](http://sldc.mizoram.gov.in/)**
+
+- **Odisha [https://realtimedata.sldcorissa.org.in/](https://realtimedata.sldcorissa.org.in/)**
+   - Alt: [https://realtimedata.sldcorissa.org.in/](https://realtimedata.sldcorissa.org.in/)
+
+- **Punjab (Nested Links) [http://www.punjabsldc.org/](http://www.punjabsldc.org/)**
+
+
+- **Rajasthan (Nested Links) [http://www.rvpn.co.in/](http://www.rvpn.co.in/)**
+
+
+- **Tamil Nadu (Nested Links) [http://tnebldc.org/  | http://mail.tneb.in/gisapp/generationstationpub.jsp#7/11.749/79.052] (http://tnebldc.org/  | http://mail.tneb.in/gisapp/generationstationpub.jsp#7/11.749/79.052)**
+   - Alt: [https://www.tantransco.gov.in/index.html](https://www.tantransco.gov.in/index.html)
+
+- **Telangana (Nested Links) [http://transco.telangana.gov.in/](http://transco.telangana.gov.in/)**
+
+- **Tripura (Nested Links) [http://www.tsecl.gov.in/](http://www.tsecl.gov.in/)**
+
+- **Uttar Pradesh (Nested Links) [http://www.upptcl.org/](http://www.upptcl.org/)**
+
+- **Uttarakhand (Nested Links) [http://www.ptcul.org/](http://www.ptcul.org/ )**
+
+- **West Bengal [http://www.wbsldc.in](http://www.wbsldc.in)**
+   - Alt: [http://www.wbsldc.in/abt-meterdata.php](http://www.wbsldc.in/abt-meterdata.php)
+
+- **Tripura (Nested Links) [http://www.tsecl.gov.in/](http://www.tsecl.gov.in/)**
+
+----------
+
+Andaman and Nicobar Islands (A)
+http://electricity.and.nic.in/ (discom)
+
+
+Chandigarh (B)
+http://chdengineering.gov.in/pages/index.htm 
+
+
+Dadra and Nagar Haveli and Daman and Diu (C)
+http://powerdnh.nic.in/   http://www.dded.gov.in/ 
+
+
+Lakshadweep (F)
+http://lakpower.nic.in/   http://powerlak.gov.in/ 
+
+
+National Capital Territory of Delhi (G)
+https://www.delhisldc.org/Redirect.aspx?Loc=0804
+Includes DRAWL for chandigarh, haryana, himachal, J&K, punjab, rajasthan, uttarakhand, uttar-pradesh
+
+
+National Load Despatch Centre
+shows international market: https://scheduling.nldc.in
+
+North Eastern Regional Load Despatch Centre (NERDLC)
+https://www.nerldc.org/ | https://nerldc.in/ 
+Eastern Regional Load Despatch Centre
+https://erldc.in/
+
+
+Southern regional load despatch centre
+https://www.srldc.in/
+
+
+Western regional load despatch centre
+https://www.wrldc.in/
+
+
+Northern regional load despatch centre
+https://www.nrldc.in/
+
+
+North Eastern Regional Power Committee
+http://www.nerpc.nic.in/
+
+
+Southern Regional Power Committee
+https://www.srpc.kar.nic.in
+
+
+Northern Regional Power Committee
+https://nrpc.gov.in/
+
+
+----------
+
+
+
+
+
+
 
 
 ### Unreliable
 - Gujarat (Nested Links) [http://www.sldcguj.com/](http://www.sldcguj.com/)
 
+- Meghalaya (Nested Links) [http://117.242.153.212/eterrareports/login/login.aspx](http://117.242.153.212/eterrareports/login/login.aspx)
 
+------------
 
+http://apps.powergrid.in/PgcilClms/
+https://www.wrldc.in/
+https://www.nrldc.in/
+https://srldc.in/
+https://newwbes.nerldc.in/Report
+https://nrldc.in/reports/frequency-profile
+http://ujala.gov.in
+http://www.jkpdd.gov.in/
+https://haryanasldc.org.in/
+
+------------
 
 
 ### Currently Unavailable (Location Known)
@@ -105,6 +216,10 @@ Find those and their context under _Currently Unavailable (Location Known)_.
 - Assam
 - Goa 
 - Jharkhand 
+- Nagaland
+- Sikkim
+- Jammu and Kashmir (Territory)
+- Ladakh (Territory)
 
 
 
