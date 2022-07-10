@@ -103,8 +103,9 @@ Find those and their context under _Currently Unavailable (Location Known)_.
 - **Rajasthan (Nested Links) [http://www.rvpn.co.in/](http://www.rvpn.co.in/)**
 
 
-- **Tamil Nadu (Nested Links) [http://tnebldc.org/  | http://mail.tneb.in/gisapp/generationstationpub.jsp#7/11.749/79.052] (http://tnebldc.org/  | http://mail.tneb.in/gisapp/generationstationpub.jsp#7/11.749/79.052)**
+- **Tamil Nadu (Nested Links) [http://tnebldc.org/] (http://tnebldc.org/)**
    - Alt: [https://www.tantransco.gov.in/index.html](https://www.tantransco.gov.in/index.html)
+   - Alt: [http://mail.tneb.in/gisapp/generationstationpub.jsp#7/11.749/79.052](http://mail.tneb.in/gisapp/generationstationpub.jsp#7/11.749/79.052)
 
 - **Telangana (Nested Links) [http://transco.telangana.gov.in/](http://transco.telangana.gov.in/)**
 
