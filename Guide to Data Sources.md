@@ -71,31 +71,34 @@ Find those and their context under _Currently Unavailable (Location Known)_.
    - Load Wind-Solar Profile
    - REMC Scheduling
    - Real Time Data
-      - Frequency
-      - UI
-      - Demand
-      - Generation
-      - CGS
-      - NCEP Generation
-      - Pavagada KSPDCL
-      - BESCOM
-      - HESCOM
-      - GESCOM
-      - CESC
-      - MESCOM
+      - (Frequency, UI, Demand, Generation, CGS, NCEP Generation, Pavagada KSPDCL, BESCOM, HESCOM, GESCOM, CESC, MESCOM)
 
 - **Kerala (Nested Links) [https://sldckerala.com/index.php?id=1](https://sldckerala.com/index.php?id=1)**
+   Example Daily data: Solar, IPPs, BSES, KPCL, Wind Mills, Internal Generation, Imports 400KV, Consumption, 
+         Import MU, Export MU, Import/Export avg, Import/Export total, Net Schedule, Records
+   - Generation (Daily)
+      - (Individual Power Stations, Hydro electric, Captive, Thermal (Thermal BDPP, KDPP), Wind, IPP)
+   - Imports (Daily)
+   - Storage (Daily)
+      - (Min. Draw down level, Full Reservoir, Effective Storage MCM, Storage %, Gen. Capability MU, Spill, Inflow, Cummulative IF for month MU, Previous Day's Storage %, Historical Comparison)
+   - Availability (Daily)
+   - Others
+      - (Maximum Demand, Minimum Demand, Morning Peak, Evening Peak, Records, Bus Voltage)
+   - Forecast (Actual Demand vs Forecast Demand, 15 min increments)
 
 - **Madhya Pradesh (Nested Links) [http://www.sldcmpindia.com/](http://www.sldcmpindia.com/)**
+   - Real Time Data
+      - WR Grid Frequency, Dev Rate, Catered Demand
+   - RE Curtailment
+      _Requires interaction to see daily value_
 
-- **Maharashtra (Nested Links) [http://www.mahasldc.in/](http://www.mahasldc.in/)**
 
 - **Manipur (Nested Links) [https://sldcmanipur.com/](https://sldcmanipur.com/)**
+   - Real Time Data:
+       - Schedule, Drawal, Deviation, Frequency, Line Name, Line Load, Sub-station, Transformer Load
+   - Substation locations
 
-- **Mizoram (Nested Links) [http://sldc.mizoram.gov.in/](http://sldc.mizoram.gov.in/)**
 
-- **Odisha [https://realtimedata.sldcorissa.org.in/](https://realtimedata.sldcorissa.org.in/)**
-   - Alt: [https://realtimedata.sldcorissa.org.in/](https://realtimedata.sldcorissa.org.in/)
 
 - **Punjab (Nested Links) [http://www.punjabsldc.org/](http://www.punjabsldc.org/)**
 
@@ -189,6 +192,28 @@ https://nrpc.gov.in/
 - Gujarat (Nested Links) [http://www.sldcguj.com/](http://www.sldcguj.com/)
 
 - Meghalaya (Nested Links) [http://117.242.153.212/eterrareports/login/login.aspx](http://117.242.153.212/eterrareports/login/login.aspx)
+
+- **Maharashtra (Nested Links) [http://www.mahasldc.in/](http://www.mahasldc.in/)** _Real Time Data is robust but displays as an image file from a screenshot)_
+   - SCADA Data
+      - Station wise Generation, Exchange & Demand
+      - 400Kv ICT & Line Loading
+      - 220Kv ICT Loading
+      - Online Wind Data
+      - Online Solar Data
+      - Online Others & Small Hydro
+      - Generation Details
+      - Network Diagram
+   - Scheduling & MoD Reports
+   - DSM
+   - Wind & Solar DSM
+
+
+- **Mizoram (Nested Links) [http://sldc.mizoram.gov.in/](http://sldc.mizoram.gov.in/)**
+   _Only theoretical data dated to 2021_
+
+- **Odisha [http://www.sldcorissa.org.in](http://www.sldcorissa.org.in)**
+   - Alt: [https://realtimedata.sldcorissa.org.in/](https://realtimedata.sldcorissa.org.in/)
+   _Only theoretical data, downloadable as .pdf_
 
 ------------
 
