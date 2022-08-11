@@ -21,7 +21,7 @@ class QuotesSpider(scrapy.Spider):
         tables[1] = response.xpath('//*[@id="testdiv"]/table/tbody/tr[2]/td[2]/table').extract()
         for tbl in tables:
             yield {
-                'Transformer Name': response.xpath('//*[@id="testdiv"]/table/tbody/tr[2]/td[1]/table/tbody/tr[3]/td[1]/text()').extract(),
-                'Load': response.xpath('//*[@id="testdiv"]/table/tbody/tr[2]/td[1]/table/tbody/tr[3]/td[2]/text()').extract(),
+                'Transformer Name': response.xpath('//*[@id="testdiv"]/table/tbody/tr[2]/td[1]/table/tbody/tr[3]/td[1]/span/text()').extract(),
+                'Load': response.xpath('//*[@id="testdiv"]/table/tbody/tr[2]/td[1]/table/tbody/tr[3]/td[2]/span/strong/text()').extract(),
                 'Test': 'hi'
             }
