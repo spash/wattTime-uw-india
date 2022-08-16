@@ -7,16 +7,17 @@ This repo contains the code for our scrapers and the documentation for our data 
 ### MacOS, from terminal
 
 (Tested with Python 3.9.13 via virtual environment) 
-- **Navigate to tutorial folder containing _init.py_**
-- **create virtual environment, activate it, and (_optional_) install scrapy with pip.** Enter:
+- Navigate to tutorial folder containing _init.py_
+- Create virtual environment
+    activate it
+    (_optional_) install scrapy with pip:
 ```
 python3 -m venv env
 source env/bin/activate
 pip install scrapy
 ```
 
-(_Optional_) **Create initial project directory (do first time)**
-From chosen directory:
+- (_Optional_) Create initial project directory (do first time)
 ```
 scrapy startproject tutorial
 ```
@@ -43,20 +44,28 @@ tutorial/
             __init__.py
 ```
 
-Find your local outputs (json and html pages) in "local-output" directory by default (which are .gitignore'd)
-
-**Save html pages to /local_output with** `scrapy crawl [spidername]` 
-(_Note: use the spider name variable within the class, not the spider class name itself_)
-**Save output as json file with** `local scrapy crawl [spidername] -o ./local_output/[spidername].json`
-
 ### Scrapy Shell
 
-**Enter Scrapy Shell**
+- Enter Scrapy shell: `scrapy shell '[url]'`
+- Quit Scrapy shell: `quit`
+
+
+### Output
+By default, your local outputs (json and html pages) are in "local-output" directory (and are .gitignore'd)
+
+- Save html pages to /local_output: `scrapy crawl [spidername]` 
+    (_Note: use the spider name variable within the class, not the spider class name itself_)
+- Save output as json file: `local scrapy crawl [spidername] -o ./local_output/[spidername].json`
+
+The database schema is defined in `/tutorial/models.py`. It's connection string is found in `/tutorial/settings.py`, which is where you may create **pipelines**, numbered 0-1000, which represents the order of their execution. Ex:
 ```
-scrapy shell '[url]'
+ITEM_PIPELINES = {
+    'tutorial.pipelines.SaveSpider1Pipeline': 100,
+}
 ```
 
-Quit the Scrapy shell with `quit`
+
+
 
 
 ## Troubleshooting: Frequent issues
