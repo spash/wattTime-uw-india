@@ -1,4 +1,4 @@
-# How we approach scraping Indian emission grid data for WattTime
+# How we scrape Indian emission grid data for WattTime
 
 This repo contains the code for our scrapers and the documentation for our data sources. Data sources are found in datasources.md
 
@@ -47,6 +47,9 @@ tutorial/
 ### Scrapy Shell
 
 - Enter Scrapy shell: `scrapy shell '[url]'`
+- View Scrapy commands: `scrapy -h`
+- View help for particular command: `scrapy <command> [options] [args]`
+- View web response in shell: `view(response)`
 - Quit Scrapy shell: `quit`
 
 
@@ -70,4 +73,40 @@ ITEM_PIPELINES = {
 
 ## Troubleshooting: Frequent issues
 
-Type `shelp()` in the Scrapy shell
+Diagnose with `shelp()` via the Scrapy shell
+
+
+
+## Optional
+
+### Colorized Logging
+Add the `colorlog` package to your `settings.py` file:
+```import copy
+from colorlog import ColoredFormatter
+import scrapy.utils.log
+
+color_formatter = ColoredFormatter(
+    (
+        '%(log_color)s%(levelname)-5s%(reset)s '
+        '%(yellow)s[%(asctime)s]%(reset)s'
+        '%(white)s %(name)s %(funcName)s %(bold_purple)s:%(lineno)d%(reset)s '
+        '%(log_color)s%(message)s%(reset)s'
+    ),
+    datefmt='%y-%m-%d %H:%M:%S',
+    log_colors={
+        'DEBUG': 'blue',
+        'INFO': 'bold_cyan',
+        'WARNING': 'red',
+        'ERROR': 'bg_bold_red',
+        'CRITICAL': 'red,bg_white',
+    }
+)
+
+_get_handler = copy.copy(scrapy.utils.log._get_handler)
+
+def _get_handler_custom(*args, **kwargs):
+    handler = _get_handler(*args, **kwargs)
+    handler.setFormatter(color_formatter)
+    return handler
+scrapy.utils.log._get_handler = _get_handler_custom
+```
