@@ -1,4 +1,4 @@
-# How we scrape Indian emission grid data for WattTime
+# How we use Scrapy
 
 This repo contains the code for our scrapers and the documentation for our data sources. Data sources are found in datasources.md
 
