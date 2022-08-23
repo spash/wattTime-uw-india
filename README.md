@@ -58,7 +58,8 @@ By default, your local outputs (json and html pages) are in "local-output" direc
 
 - Save html pages to /local_output: `scrapy crawl [spidername]` 
     (_Note: use the spider name variable within the class, not the spider class name itself_)
-- Save output as json file: `local scrapy crawl [spidername] -o ./local_output/[spidername].json`
+- Save output as json file from scrapy shell: `scrapy crawl [spider name] -o [file name].json`
+- Save output as csv file from scrapy shell: `scrapy crawl [spider name] -o [file name].csv`
 
 The database schema is defined in `/tutorial/models.py`. It's connection string is found in `/tutorial/settings.py`, which is where you may create **pipelines**, numbered 0-1000, which represents the order of their execution. Ex:
 ```
@@ -67,6 +68,13 @@ ITEM_PIPELINES = {
 }
 ```
 
+**Note**: `/tutorial/settings.py` is global. To affect the output of one specific spider, overwrite the Feed URI `custom_settings` variable [^FeedURI] in your spider class, using the desired `.json` or `.csv` file name:
+```
+custom_settings = {
+        # don't forget to update your settings.py file (refer to footnote above)
+       'FEED_URI' : 'folder/filename.csv'
+   }
+```
 
 
 
@@ -75,4 +83,4 @@ ITEM_PIPELINES = {
 
 Diagnose with `shelp()` via the Scrapy shell
 
-
+[^FeedURI]: Feed URI examples shown at the bottom of https://doc.scrapy.org/en/latest/topics/feed-exports.html with an example of pipelines also here https://www.analyticsvidhya.com/blog/2017/07/web-scraping-in-python-using-scrapy/
