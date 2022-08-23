@@ -1,0 +1,26 @@
+### List of current spiders 
+These are the spiders in production and the URLs they scrape. Please remember to update this for the benefit of others
+
+
+**Use This Format:**
+```
+**State/Territory name**
+- Spider name
+- Spider File.py
+- [Website Domain](url) 
+- Spider Owner (i.e., Your name)
+- Date
+```
+
+
+### Spiders
+
+**Chattisgarh SLDC**
+- quotes
+- data_spider.py
+- [sldccg.com](https://sldccg.com/trans.php) 
+- Raiham
+- 8/23/22
+
+
+
