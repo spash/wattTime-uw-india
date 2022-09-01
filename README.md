@@ -20,11 +20,11 @@ pip install scrapy
 - The easiest way to install scrapy is through anaconda, so ensure you have anaconda installed first
 - Create virtual environment and activate it
 
-'''
+```
 create --name virtualenv_scrapy
 conda activate virtualenv_scrapy
 conda install -c conda-forge scrapy
-'''
+```
 
 - (_Optional_) Create initial project directory (do first time)
 ```
@@ -64,9 +64,9 @@ tutorial/
 ### Conda Prompt - Windows
 
 - Navigate to folder where your project is in the conda prompt
-'''
+```
 cd ../wattTime/initialscrape
-'''
+```
 - Enter Scrapy shell: `scrapy shell '[url]'`
 - View Scrapy commands: `scrapy -h`
 - View help for particular command: `scrapy <command> [options] [args]`
