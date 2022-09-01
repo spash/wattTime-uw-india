@@ -16,6 +16,15 @@ python3 -m venv env
 source env/bin/activate
 pip install scrapy
 ```
+### Windows, from Anaconda Command Prompt
+- The easiest way to install scrapy is through anaconda, so ensure you have anaconda installed first
+- Create virtual environment and activate it
+
+'''
+create --name virtualenv_scrapy
+conda activate virtualenv_scrapy
+conda install -c conda-forge scrapy
+'''
 
 - (_Optional_) Create initial project directory (do first time)
 ```
@@ -44,7 +53,7 @@ tutorial/
             __init__.py
 ```
 
-### Scrapy Shell
+### Scrapy Shell - MacOS
 
 - Enter Scrapy shell: `scrapy shell '[url]'`
 - View Scrapy commands: `scrapy -h`
@@ -52,6 +61,17 @@ tutorial/
 - View web response in shell: `view(response)`
 - Quit Scrapy shell: `quit`
 
+### Conda Prompt - Windows
+
+- Navigate to folder where your project is in the conda prompt
+'''
+cd ../wattTime/initialscrape
+'''
+- Enter Scrapy shell: `scrapy shell '[url]'`
+- View Scrapy commands: `scrapy -h`
+- View help for particular command: `scrapy <command> [options] [args]`
+- View web response in shell: `view(response)`
+- Quit Scrapy shell: `quit`
 
 ### Output
 By default, your local outputs (json and html pages) are in "local-output" directory (and are .gitignore'd)
@@ -84,3 +104,5 @@ custom_settings = {
 Diagnose with `shelp()` via the Scrapy shell
 
 [^FeedURI]: Feed URI examples shown at the bottom of https://doc.scrapy.org/en/latest/topics/feed-exports.html with an example of pipelines also here https://www.analyticsvidhya.com/blog/2017/07/web-scraping-in-python-using-scrapy/
+
+Scraping items to csv or JSON helpful link: https://www.geeksforgeeks.org/saving-scraped-items-to-json-and-csv-file-using-scrapy/
