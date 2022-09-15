@@ -100,9 +100,8 @@ custom_settings = {
 
 
 ## Troubleshooting: Frequent issues
-
+[^FeedURI]: Feed URI examples shown at the bottom of https://doc.scrapy.org/en/latest/topics/feed-exports.html with an example of pipelines also here https://www.analyticsvidhya.com/blog/2017/07/web-scraping-in-python-using-scrapy/
 - Diagnose with `shelp()` via the Scrapy shell
-- [^FeedURI]: Feed URI examples shown at the bottom of https://doc.scrapy.org/en/latest/topics/feed-exports.html with an example of pipelines also here https://www.analyticsvidhya.com/blog/2017/07/web-scraping-in-python-using-scrapy/
 - Scraping items to csv or JSON helpful link: https://www.geeksforgeeks.org/saving-scraped-items-to-json-and-csv-file-using-scrapy/
 - User Agents errors are common for example an error like this can be seen in the command prompt
 ```
