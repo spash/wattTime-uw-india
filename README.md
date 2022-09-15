@@ -117,4 +117,4 @@ DEBUG: Assigned User-Agent Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTM
 2022-09-15 12:40:04 [protego] DEBUG: Rule at line 11 without any user agent to enforce it on.
 2022-09-15 12:40:04 [scrapy_user_agents.middlewares] DEBUG: Assigned User-Agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36
 ```
-- By adjusting USER_AGENT = 'insert your user agent' in the settings.py you can mitigate this issue.
+- By adjusting USER_AGENT = 'insert your user agent' in the settings.py you can mitigate this issue. See this link for further explanation: https://stackoverflow.com/questions/69313884/debug-rule-at-line-3-without-any-user-agent-to-enforce-it-on-python-scrapy
