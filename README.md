@@ -101,8 +101,20 @@ custom_settings = {
 
 ## Troubleshooting: Frequent issues
 
-Diagnose with `shelp()` via the Scrapy shell
-
-[^FeedURI]: Feed URI examples shown at the bottom of https://doc.scrapy.org/en/latest/topics/feed-exports.html with an example of pipelines also here https://www.analyticsvidhya.com/blog/2017/07/web-scraping-in-python-using-scrapy/
-
-Scraping items to csv or JSON helpful link: https://www.geeksforgeeks.org/saving-scraped-items-to-json-and-csv-file-using-scrapy/
+- Diagnose with `shelp()` via the Scrapy shell
+- [^FeedURI]: Feed URI examples shown at the bottom of https://doc.scrapy.org/en/latest/topics/feed-exports.html with an example of pipelines also here https://www.analyticsvidhya.com/blog/2017/07/web-scraping-in-python-using-scrapy/
+- Scraping items to csv or JSON helpful link: https://www.geeksforgeeks.org/saving-scraped-items-to-json-and-csv-file-using-scrapy/
+- User Agents errors are common for example an error like this can be seen in the command prompt
+```
+DEBUG: Assigned User-Agent Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36
+2022-09-15 12:40:04 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://sldccg.com/robots.txt> (referer: None)
+2022-09-15 12:40:04 [protego] DEBUG: Rule at line 1 without any user agent to enforce it on.
+2022-09-15 12:40:04 [protego] DEBUG: Rule at line 2 without any user agent to enforce it on.
+2022-09-15 12:40:04 [protego] DEBUG: Rule at line 7 without any user agent to enforce it on.
+2022-09-15 12:40:04 [protego] DEBUG: Rule at line 8 without any user agent to enforce it on.
+2022-09-15 12:40:04 [protego] DEBUG: Rule at line 9 without any user agent to enforce it on.
+2022-09-15 12:40:04 [protego] DEBUG: Rule at line 10 without any user agent to enforce it on.
+2022-09-15 12:40:04 [protego] DEBUG: Rule at line 11 without any user agent to enforce it on.
+2022-09-15 12:40:04 [scrapy_user_agents.middlewares] DEBUG: Assigned User-Agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36
+```
+- By adjusting USER_AGENT = 'insert your user agent' in the settings.py you can mitigate this issue.
