@@ -12,11 +12,12 @@ BOT_NAME = 'initialscrape'
 
 SPIDER_MODULES = ['initialscrape.spiders']
 NEWSPIDER_MODULE = 'initialscrape.spiders'
-
+custom_settings = {'FEED_URI': '../../data.csv',
+'FEED_FORMAT': 'csv'}
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'initialscrape (+http://www.yourdomain.com)'
-USER_AGENT =  'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+USER_AGENT =  'Mozilla/5.0 (Windows NT 5.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
@@ -66,9 +67,9 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'initialscrape.pipelines.InitialscrapePipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'initialscrape.pipelines.InitialscrapePipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

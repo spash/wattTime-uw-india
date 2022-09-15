@@ -6,7 +6,13 @@
 import scrapy
 
 
-class InitialscrapeItem(scrapy.Item):
+class TransformerItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    Transformer_name = scrapy.Field()
+    Transformer_load = scrapy.Field()
+class LineItem(scrapy.Item):
+    # define the fields for your item here like:
+    # name = scrapy.Field()
+    Line_name = scrapy.Field()
+    Line_load = scrapy.Field()

@@ -1,20 +1,32 @@
 import scrapy
+import csv
+from ..items import TransformerItem, LineItem
 
 # When you run this code in your anaconda console or command line
 # you run 'scrapy crawl quotes' where quotes is the name assigned below 
-class QuotesSpider(scrapy.Spider):
-    name = "quotes"
+class chhattisgarhSLDC(scrapy.Spider):
+    name = "chhattisgarhSLDC"
 
     def start_requests(self):
         urls = [
             'https://sldccg.com/trans.php',
+            'https://sldccg.com/gen.php'
         ]
-        for url in urls:
-            yield scrapy.Request(url=url, callback=self.parse)
-        # requests scrapy url
+        cbs = [self.parse1,self.parse2,self.parse3]
+        # yield scrapy.Request(url=urls[0], callback=cbs[0])
+        yield scrapy.Request(url=urls[i], callback=cbs[i])
+        for i in range(len(urls)):
+            if i == 0 or i == 1:
+                yield scrapy.Request(url=urls[0], callback=cbs[i])
+            # Currently the last url is facing issues with user agent thus this last request is commented out
+            # else: yield scrapy.Request(url=urls[i], callback=cbs[i])
+       
+      
     
-    def parse(self, response):
-
+    def parse1(self, response):
+        # In developer tools hover over the element and copy Xpath
+        # T labels is for transformers and L labels is for lines
+        
         t_labels = ['//*[@id="Label7"]/text()', '//*[@id="Label14"]/text()',
         '//*[@id="Label15"]/text()', '//*[@id="Label16"]/text()',
         '//*[@id="Label40"]/text()','//*[@id="Label41"]/text()',
@@ -38,14 +50,20 @@ class QuotesSpider(scrapy.Spider):
          '//*[@id="L19"]/strong/text()', '//*[@id="L20"]/strong/text()',
          '//*[@id="L47"]/strong/text()', '//*[@id="L48"]/strong/text()']
         # i = 0
-        object = {}
-        # length of labels is 10 rn
-        for i in range(len(t_labels)):
-            transformer = response.xpath(t_labels[i]).extract()
-            load = response.xpath(t_loads[i]).extract()
-            if transformer and load :
-                object['Transformer: '  + str(transformer)[2:-2]] = int(str(load)[2:-2])
         
+        # length of labels is 10 rn
+        items = []
+        t_item = TransformerItem()
+        for i in range(len(t_labels)):
+            transformer = response.xpath(t_labels[i]).extract() # Bhilai ICT
+            load = response.xpath(t_loads[i]).extract() #get actual number
+            if transformer and load:
+                t_item['Transformer_name'] = str(transformer)[2:-2]
+                t_item['Transformer_load'] =  int(str(load)[2:-2])
+            yield t_item
+        
+        
+    def parse2(self, response):
         L_labels = ['//*[@id="Label8"]/text()', '//*[@id="Label27"]/text()',
         '//*[@id="Label28"]/text()', '//*[@id="Label44"]/text()',
         '//*[@id="Label31"]/text()','//*[@id="Label45"]/text()',
@@ -72,9 +90,32 @@ class QuotesSpider(scrapy.Spider):
          '//*[@id="L41"]/strong/text()', '//*[@id="L42"]/strong/text()',
          '//*[@id="L43"]/strong/text()', '//*[@id="L44"]/strong/text()',
          '//*[@id="L45"]/strong/text()', '//*[@id="L46"]/strong/text()']
+        l_item = LineItem()
         for i in range(len(L_labels)):
             line = response.xpath(L_labels[i]).extract()
             load = response.xpath(L_loads[i]).extract()
-            if transformer and load :
-                object['Line: '  + str(line)[2:-2]] = int(str(load)[2:-2])        
+            if line and load :
+                l_item['Line_name'] = str(line)[2:-2]
+                l_item['Line_load'] = int(str(load)[2:-2])        
+            yield l_item
+
+    def parse3(self, response):
+        object = {}
+        
+        gen_names = ['//*[@id="Label255"]/text()', '//*[@id="Label256"]/text()',
+        '//*[@id="Label257"]/text()', '//*[@id="Label258"]/text()', '//*[@id="Label259"]/text()'
+        , '//*[@id="Label271"]/text()', '//*[@id="Label272"]/text()', '//*[@id="Label275"]/text()',
+        '//*[@id="Label276"]/text()', '//*[@id="Label277"]/text()', '//*[@id="Label280"]/text()',
+        '//*[@id="Label281"]/text()', '//*[@id="Label314"]/text()']
+        gen_amounts = ['//*[@id="L4"]/strong/text()', '//*[@id="L5"]/strong/text()'
+        ,'//*[@id="L6"]/strong/text()', '//*[@id="L7"]/strong/text()', '//*[@id="L8"]/strong/text()',
+        '//*[@id="L10"]/strong/text()', '//*[@id="L11"]/strong/text()', '//*[@id="L13"]/strong/text()',
+        '//*[@id="L14"]/strong/text()', '//*[@id="L15"]/strong/text()', '//*[@id="L17"]/strong/text()',
+        '//*[@id="L18"]/strong/text()', '//*[@id="L21"]/strong/text()']
+        # for i in range(len(gen_names)):
+        gen = response.xpath(gen_names[0]).extract() 
+        amount = response.xpath(gen_amounts[0]).extract() 
+            # if gen and amount:
+        object['Generator: '  + gen] = amount
         yield object
+        
