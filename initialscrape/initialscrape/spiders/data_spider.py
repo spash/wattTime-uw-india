@@ -14,7 +14,6 @@ class chhattisgarhSLDC(scrapy.Spider):
         ]
         cbs = [self.parse1,self.parse2,self.parse3]
         # yield scrapy.Request(url=urls[0], callback=cbs[0])
-        yield scrapy.Request(url=urls[i], callback=cbs[i])
         for i in range(len(urls)):
             if i == 0 or i == 1:
                 yield scrapy.Request(url=urls[0], callback=cbs[i])
