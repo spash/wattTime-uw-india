@@ -22,5 +22,17 @@ These are the spiders in production and the URLs they scrape. Please remember to
 - Raiham
 - 8/23/22
 
+**Madhya Pradesh SLDC**
+- madhyapradeshSDLC
+- madhyapradeshSDLC_Spider.py
+- [sldcmpindia.com](http://www.sldcmpindia.com/) 
+- Terry
+- 9/10/22
 
+**Manipur SLDC**
+- manipurSDLC
+- manipurSDLC_Spider.py
+- [sldcmanipur.com](https://sldcmanipur.com/) 
+- Terry
+- 9/15/22
 
