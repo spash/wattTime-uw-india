@@ -1,17 +1,13 @@
 import scrapy
 import sys
 from scrapy.crawler import CrawlerRunner
-
-# sys.path.append(
-#     "C:\Users\raiha\OneDrive\Documents\wattTime-uw-india\initialscrape\initialscrape"
-# )
 from ..items import LineItem, TransformerItem
-
-# When you run this code in your anaconda console or command line
-# you run 'scrapy crawl quotes' where quotes is the name assigned below
 from scrapy.utils.project import get_project_settings
 from scrapy.utils.log import configure_logging
 from twisted.internet import reactor
+
+# When you run this code in your anaconda console or command line
+# you run 'scrapy crawl chhattisgarhSLDC' where chhattisgarhSLDC is the name assigned below
 
 
 class chhattisgarhSLDC1(scrapy.Spider):
@@ -22,12 +18,10 @@ class chhattisgarhSLDC1(scrapy.Spider):
 
         # yield scrapy.Request(url=urls[0], callback=cbs[0])
         yield scrapy.Request(url=urls[0], callback=self.parse1)
-        # Currently the last url is facing issues with user agent thus this last request is commented out
-        # else: yield scrapy.Request(url=urls[i], callback=cbs[i])
 
     def parse1(self, response):
         # In developer tools hover over the element and copy Xpath
-        # T labels is for transformers and L labels is for lines
+        # T labels is for transformers
 
         t_labels = [
             '//*[@id="Label7"]/text()',
@@ -77,9 +71,7 @@ class chhattisgarhSLDC1(scrapy.Spider):
             '//*[@id="L47"]/strong/text()',
             '//*[@id="L48"]/strong/text()',
         ]
-        # i = 0
 
-        # length of labels is 10 rn
         items = []
         t_item = TransformerItem()
         for i in range(len(t_labels)):
@@ -97,6 +89,7 @@ class chhattisgarhSLDC2(scrapy.Spider):
         yield scrapy.Request(url="https://sldccg.com/trans.php", callback=self.parse2)
         # Currently the last url is facing issues with user agent thus this last request is commented out
         # else: yield scrapy.Request(url=urls[i], callback=cbs[i])
+        # L labels is for lines
 
     def parse2(self, response):
         L_labels = [
@@ -169,7 +162,7 @@ class chhattisgarhSLDC3(scrapy.Spider):
     def start_requests(self):
 
         yield scrapy.Request(url="https://sldccg.com/gen.php", callback=self.parse3)
-        # Currently the last url is facing issues with user agent thus this last request is commented out
+        # Currently this url is facing issues with user agent thus this last request is commented out
         # else: yield scrapy.Request(url=urls[i], callback=cbs[i])
 
     def parse3(self, response):
@@ -205,17 +198,20 @@ class chhattisgarhSLDC3(scrapy.Spider):
             '//*[@id="L18"]/strong/text()',
             '//*[@id="L21"]/strong/text()',
         ]
-        # for i in range(len(gen_names)):
-        gen = response.xpath(gen_names[0]).extract()
-        amount = response.xpath(gen_amounts[0]).extract()
-        # if gen and amount:
-        object["Generator: " + gen] = amount
+        for i in range(len(gen_names)):
+            gen = response.xpath(gen_names[0]).extract()
+            amount = response.xpath(gen_amounts[0]).extract()
+            if gen and amount:
+                object["Generator: " + gen] = amount
         yield object
 
 
 if "twisted.internet.reactor" in sys.modules:
     del sys.modules["twisted.internet.reactor"]
-
+# This section is running the multiple spiders at once utilizing Scrapy Crawler Runner
+# So far I have tried making a parent function named "chhattisgarhSLDC" and running this section
+# That didn't work and neither did calling each chhattisgarhSLDC class
+# The csv outputted runs chhattisgarhSLDC1 twice instead of running the other classes
 configure_logging()
 setting = get_project_settings()
 runner = CrawlerRunner(setting)
