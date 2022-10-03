@@ -206,18 +206,18 @@ class chhattisgarhSLDC3(scrapy.Spider):
         yield object
 
 
-if "twisted.internet.reactor" in sys.modules:
-    del sys.modules["twisted.internet.reactor"]
+#if "twisted.internet.reactor" in sys.modules:
+#    del sys.modules["twisted.internet.reactor"]
 # This section is running the multiple spiders at once utilizing Scrapy Crawler Runner
 # So far I have tried making a parent function named "chhattisgarhSLDC" and running this section
 # That didn't work and neither did calling each chhattisgarhSLDC class
 # The csv outputted runs chhattisgarhSLDC1 twice instead of running the other classes
-configure_logging()
-setting = get_project_settings()
-runner = CrawlerRunner(setting)
-runner.crawl(chhattisgarhSLDC1)
-runner.crawl(chhattisgarhSLDC2)
-runner.crawl(chhattisgarhSLDC3)
-d = runner.join()
-d.addBoth(lambda _: reactor.stop())
-reactor.run()
+#configure_logging()
+#setting = get_project_settings()
+#runner = CrawlerRunner(setting)
+#runner.crawl(chhattisgarhSLDC1)
+#runner.crawl(chhattisgarhSLDC2)
+#runner.crawl(chhattisgarhSLDC3)
+#d = runner.join()
+#d.addBoth(lambda _: reactor.stop())
+#reactor.run()
