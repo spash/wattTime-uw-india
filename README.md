@@ -16,6 +16,7 @@ python3 -m venv env
 source env/bin/activate
 python3 -m pip install scrapy
 python3 -m pip install twisted
+pip install scrapy-user-agents
 ```
 ### Windows, from Anaconda Command Prompt
 - The easiest way to install scrapy is through anaconda, so ensure you have anaconda installed first
