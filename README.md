@@ -55,7 +55,9 @@ tutorial/
 
 ### Scrapy Shell - MacOS
 
-- Enter Scrapy shell: `scrapy shell '[url]'`
+- Enter Scrapy shell: 
+-   `pip install scrapy-user-agents`
+-   `scrapy shell '[url]'`
 - View Scrapy commands: `scrapy -h`
 - View help for particular command: `scrapy <command> [options] [args]`
 - View web response in shell: `view(response)`
