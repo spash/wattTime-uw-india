@@ -14,7 +14,8 @@ This repo contains the code for our scrapers and the documentation for our data 
 ```
 python3 -m venv env
 source env/bin/activate
-pip install scrapy
+python3 -m pip install scrapy
+python3 -m pip install twisted
 ```
 ### Windows, from Anaconda Command Prompt
 - The easiest way to install scrapy is through anaconda, so ensure you have anaconda installed first
@@ -56,8 +57,8 @@ tutorial/
 ### Scrapy Shell - MacOS
 
 - Enter Scrapy shell: 
--   `pip install scrapy-user-agents`
--   `scrapy shell '[url]'`
+    -   `pip install scrapy-user-agents`
+    -   `scrapy shell '[url]'`
 - View Scrapy commands: `scrapy -h`
 - View help for particular command: `scrapy <command> [options] [args]`
 - View web response in shell: `view(response)`
